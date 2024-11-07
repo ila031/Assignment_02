@@ -1,0 +1,280 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Georgia', serif;
+    background-color: brown;
+}
+
+/* Header styles */
+header {
+    position: relative; /* Makes the header the containing block for absolutely positioned elements */
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border-bottom: 3px solid black;
+   
+}
+
+/* Container for split sections */
+.container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+}
+
+/* Style for each side */
+.section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    position: relative; /* To position the image and text correctly */
+    overflow: hidden; /* Ensures image doesn't overflow the section */
+}
+
+/* Colors and hover effect */
+.male {
+    background-color: blue;
+}
+
+.female {
+    background-color: orange;
+}
+
+.section:hover {
+    transform: scale(1.05);
+    background-color: brown;
+}
+
+/* Image styles */
+.section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures the image covers the entire section */
+    height: 100%; /* Ensures the image covers the entire section */
+    object-fit: contain; /* Maintains image aspect ratio and covers the area */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Show the image when hovering */
+.section:hover img {
+    opacity: 1;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: brown;
+    color: white;
+    border-top: 3px solid  #000000;
+    font-size: 1em;
+}
+
+.cite {
+    position: absolute; /* Positions it relative to the header */
+    right: 10px; /* Adjust the distance from the right edge */
+    top: 50%; /* Centers it vertically */
+    transform: translateY(-50%); /* Corrects vertical alignment */
+    background-color: rgb(186, 91, 91); /* Example button styling */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Optional for rounded corners */
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Georgia', serif;
+    background-color: #eabd3d;
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+}
+
+.h2 {
+    text-align: center;
+    background-color: brown;
+    padding: 10px;
+    margin: 20px 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #ffffff;
+    font-family: 'Georgia';
+    margin-left: 110px;
+    margin-right: 110px;
+    border-color: black;
+    border-style: solid ;
+    border-width: 4px;
+}
+
+.first-story {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Container for the rest of the stories */
+.container1 {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Wrap items into multiple rows */
+    gap: 30px; /* Space between sections */
+    padding: 20px;
+    background-color: black;
+    margin-bottom: 40px; /* Add space between the container and footer */
+}
+
+/* Style for each story section */
+.story-section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 48%; /* Two per row */
+}
+
+.story-section:nth-child(even) {
+    flex-direction: row-reverse; /* Alternate image and text alignment */
+}
+
+.story-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image styles */
+.story-section img {
+    width: 40%; /* Adjust image size for balance */
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #eabd3d;
+}
+
+/* Story content styles */
+.story-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.8;
+    padding: 10px 0;
+}
+
+.story-content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color:brown;
+    color: white;
+    border-top: 4px solid #222;
+    font-size: 1em;
+    margin-top: 20px; /* Add space between the container and footer */
+}
+
+p {
+    text-align: center;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    .h2 {
+        font-size: 1.5em;
+    }
+
+    .container1 {
+        max-width: 90%;
+    }
+
+    .story-section {
+        flex-direction: column; /* Stack image and text vertically */
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .story-section img {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .story-content p {
+        font-size: 1em; /* Slightly smaller font for mobile */
+    }
+}
+
+.go-back {
+    display: inline-block;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: white;
+    background-color: brown;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.go-back:hover {
+    background-color: red;
+}
+
+.cite {
+    position: absolute; /* Positions it relative to the header */
+    right: 10px; /* Adjust the distance from the right edge */
+    top: 50%; /* Centers it vertically */
+    transform: translateY(-50%); /* Corrects vertical alignment */
+    background-color: rgb(186, 91, 91); /* Example button styling */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Optional for rounded corners */
+}
